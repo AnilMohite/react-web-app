@@ -1,10 +1,11 @@
-.home_abt_section{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+.home_abt_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.home_abt_section .abt_img img{
-    width: 100%;
+
+.home_abt_section .abt_img img {
+  width: 100%;
 }
 
 .abt_txt {
@@ -15,53 +16,67 @@
   flex: 1;
 }
 
-.title{
-    margin: 3rem 0;
-    font-weight: 800;
-    text-align: center;
-    font-size: 1.5rem;
-}
-/* --------blog-------- */
-.blogs{
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2rem;
-    margin: 3rem 0;
-    transition: opacity 0.9s ease;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-.blog_item{
-    font-weight: 800;
-    text-align: center;
-    border: 2px solid red;
-    box-shadow: 1px 2px 5px red;
-    cursor: pointer;
+.title {
+  margin: 3rem 0;
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.blog_item img{
-    text-align: center;
-    width: 100%;
+/* --------blog-------- */
+.blogs {
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+  transition: opacity 0.9s ease;
+  opacity: 1;
+}
+
+.blog_item {
+  font-weight: 800;
+  text-align: center;
+  /* border: 2px solid red; */
+  box-shadow: 1px 2px 5px red;
+  cursor: pointer;
+  transition: all ease-in 0.3s;
+}
+
+.blog_item img {
+  text-align: center;
+  width: 100%;
 }
 
 .blog_item:hover {
-    transform: scale(1.1); /* Increase the size on hover */
+  transform: scale(1.1);
+  /* Increase the size on hover */
 }
-.moreBtn{
-    text-align: center;
+
+.moreBtn {
+  text-align: center;
+  margin-bottom: 1rem;
 }
-.moreBtn a{
-    text-decoration: none;
-    font-weight: 500;
-    color: #fff;
+
+.moreBtn .btn {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem;
+  box-shadow: 1px 2px 5px red;
 }
+
+.moreBtn .btn:hover {
+  box-shadow: 2px 3px 15px red;
+}
+
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .home_abt_section {
     flex-direction: column;
   }
-  .blogs{
-    grid-template-columns: repeat(1,1fr);
+
+  .blogs {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

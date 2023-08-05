@@ -3,6 +3,7 @@ import Layout from "./pages/Layout.js";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:slug" element={<BlogDetail />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Route>
