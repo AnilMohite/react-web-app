@@ -82,6 +82,9 @@
    height: auto;
  }
 
+ .mob_header {
+   display: none;
+ }
 
  /* Media query for smaller screens */
  @media (max-width: 768px) {
@@ -89,13 +92,19 @@
      padding: 1rem 1rem;
    }
 
-   .header nav {
+   .header .desk_header {
      display: none;
    }
 
+   .mob_header {
+     display: block;
+   }
+
    .logo {
-     margin: 0 auto;
-     text-align: center;
+     display: flex;
+     align-items: center;
+     width: 100%;
+     justify-content: space-between;
    }
 
    .logo img {
