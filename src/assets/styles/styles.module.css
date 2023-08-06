@@ -13,9 +13,9 @@
  }
 
  /* Style for the logo */
- .logo {
-   font-size: 24px;
-   font-weight: bold;
+
+ .logo img {
+   width: 70%;
  }
 
  /* Style for the menu links */
@@ -95,11 +95,12 @@
 
    .logo {
      margin: 0 auto;
+     text-align: center;
    }
 
    .logo img {
-     width: 7rem;
-     margin-right: 15px;
+     width: 50%;
+     margin-right: 0;
    }
 
    .container {
