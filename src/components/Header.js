@@ -2,6 +2,7 @@ import Style from "../assets/styles/styles.module.css";
 import { Outlet, Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { useState } from "react";
+
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
   console.log(sidebarVisible);
