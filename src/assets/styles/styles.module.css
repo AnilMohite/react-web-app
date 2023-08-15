@@ -82,7 +82,12 @@
    height: auto;
  }
 
- .mob_header {
+ .mob_header_icon {
+   display: none;
+ }
+
+ .active_sidebar {
+   transform: translateX(0);
    display: none;
  }
 
@@ -90,13 +95,37 @@
  @media (max-width: 768px) {
    .header {
      padding: 1rem 1rem;
+     display: block;
    }
 
-   .header .desk_header {
+   .desk_header {
      display: none;
    }
 
-   .mob_header {
+   .active_sidebar {
+     display: block;
+     position: fixed;
+     top: 101px;
+     left: 0;
+     width: 100%;
+     height: auto;
+     background-color: #202124;
+     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+     animation: styles_slideOut__YM7jd 0.3s ease-in-out forwards;
+     z-index: 10;
+     padding: 1rem;
+     animation: styles_slideIn__jVdjv 0.3s ease-in-out forwards;
+   }
+
+   nav ul {
+     display: grid;
+     text-align: center;
+     gap: 1rem;
+   }
+
+
+
+   .mob_header_icon {
      display: block;
    }
 

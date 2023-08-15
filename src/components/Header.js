@@ -11,7 +11,7 @@ const Header = () => {
       <div className={Style.header}>
         <div className={Style.logo}>
           <div
-            className={Style.mob_header}
+            className={Style.mob_header_icon}
             onClick={() => setSidebarVisible(!sidebarVisible)}
           >
             {/* Embedding the SVG directly */}
@@ -37,41 +37,43 @@ const Header = () => {
           </Link>
         </div>
         {/* desktop nav  */}
-        <nav className={Style.desk_header}>
+        <nav
+          className={`${
+            sidebarVisible ? Style.active_sidebar : Style.desk_header
+          }`}
+        >
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => setSidebarVisible(!sidebarVisible)}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link
+                to="/about"
+                onClick={() => setSidebarVisible(!sidebarVisible)}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/blogs">Blogs</Link>
+              <Link
+                to="/blogs"
+                onClick={() => setSidebarVisible(!sidebarVisible)}
+              >
+                Blogs
+              </Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link
+                to="/contact"
+                onClick={() => setSidebarVisible(!sidebarVisible)}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
-        {/* mobile nav  */}
-        {sidebarVisible && (
-          <nav className={Style.mob_header}>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/blogs">Blogs</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
-        )}
       </div>
       <Outlet />
     </>
