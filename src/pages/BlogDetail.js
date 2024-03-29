@@ -1,26 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Style from "../assets/styles/styles.module.css";
-import blogsData from "../assets/blogs_data";
+import axios from "axios";
+import img from "../assets/images/index.js";
 
 const BlogDetail = () => {
-  const { slug } = useParams();
-  const blogData = blogsData.find((blog) => blog.slug === slug);
+  const { blogId } = useParams();
+  console.log('blogId',blogId)
+  const [blog, setBlog] = useState({})
+  const [latestBlogs, setLatestBlogs] = useState([]);
 
+  useEffect(()=>{
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${blogId}`)
+    .then(resp=>{
+      console.log(resp.data)
+      setBlog(resp.data)
+    })
+    .catch(error=>{
+      console.log(error)
+    });
+
+
+    // Fetch latest blogs
+    axios.get('https://jsonplaceholder.typicode.com/posts?_limit=5')
+    .then(response => {
+      setLatestBlogs(response.data);
+    })
+    .catch(error => {
+      console.error('Error fetching latest blogs:', error);
+    });
+  }, [blogId]);
   return (
     <div className={Style.container}>
       <div className={Style.blog_pg}>
         <div className={Style.blog_data}>
           <img
-            src={blogData.img}
-            alt={blogData.title}
+            src={img.img1}
+            alt={blog.title}
             className={Style.bmimg}
           />
-          <h2>{blogData.title}</h2>
-          <p>
-            <b>{blogData.short_desc}</b>
-          </p>
-          <p>{blogData.long_content}</p>
+          <h2>{blog.title}</h2>
+          <p>{blog.body}</p>
         </div>
         <div className={Style.latest_blog_section}>
           <h3>
@@ -28,11 +48,11 @@ const BlogDetail = () => {
           </h3>
 
           <div className={Style.recent_blogs}>
-            {blogsData.slice(0, 3).map((blog) => {
+            {latestBlogs.map((blog) => {
               return (
-                <div className={Style.recblog_item}>
-                  <Link to={`/blogs/${blog.slug}`}>
-                    <img src={blog.img} alt={blog.title} />
+                <div key={blog.id} className={Style.recblog_item}>
+                  <Link to={`/blogs/${blog.id}`}>
+                    <img src={img.img2} alt={blog.title} />
                     <p>{blog.title}</p>
                   </Link>
                 </div>

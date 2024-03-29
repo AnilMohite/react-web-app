@@ -33,7 +33,7 @@ const Home = () => {
         <div className={HomeStyle.blogs}>
           {blogsData.slice(0, 3).map((blog) => {
             return (
-              <div className={HomeStyle.blog_item}>
+              <div key={blog.slug} className={HomeStyle.blog_item}>
                 <Link to={`blogs/${blog.slug}`}>
                   <img src={blog.img} alt={blog.title} />
                   <p>{blog.title}</p>

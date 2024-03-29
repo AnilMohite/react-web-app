@@ -43,31 +43,31 @@ const Header = () => {
           }`}
         >
           <ul>
-            <li>
-              <Link to="/" onClick={() => setSidebarVisible(!sidebarVisible)}>
+            <li key="home">
+              <Link to="/" >
                 Home
               </Link>
             </li>
-            <li>
+            <li key="about">
               <Link
                 to="/about"
-                onClick={() => setSidebarVisible(!sidebarVisible)}
+                
               >
                 About
               </Link>
             </li>
-            <li>
+            <li key="blogs">
               <Link
                 to="/blogs"
-                onClick={() => setSidebarVisible(!sidebarVisible)}
+                
               >
                 Blogs
               </Link>
             </li>
-            <li>
+            <li key="contact">
               <Link
                 to="/contact"
-                onClick={() => setSidebarVisible(!sidebarVisible)}
+                
               >
                 Contact
               </Link>
