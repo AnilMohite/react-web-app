@@ -35,7 +35,7 @@ const BlogDetail = () => {
       <div className={Style.blog_pg}>
         <div className={Style.blog_data}>
           <img
-            src={img.img1}
+            src="https://picsum.photos/1000"
             alt={blog.title}
             className={Style.bmimg}
           />
@@ -52,7 +52,7 @@ const BlogDetail = () => {
               return (
                 <div key={blog.id} className={Style.recblog_item}>
                   <Link to={`/blogs/${blog.id}`}>
-                    <img src={img.img2} alt={blog.title} />
+                    <img src={`https://picsum.photos/${300+blog.id}`} alt={blog.title} />
                     <p>{blog.title}</p>
                   </Link>
                 </div>

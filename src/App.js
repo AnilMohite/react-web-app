@@ -3,7 +3,9 @@ import Layout from "./pages/Layout.js";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
+import Gallery from "./pages/Gallery";
 import BlogDetail from "./pages/BlogDetail";
+import GalleryDetail from "./pages/GalleryDetail";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
@@ -16,6 +18,8 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:blogId" element={<BlogDetail />} />
+          <Route path="gallery" element={<Gallery/>}/>
+          <Route path="gallery/:slug" element={<GalleryDetail />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Route>
