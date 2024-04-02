@@ -19,14 +19,12 @@ const BlogDetail = () => {
         setRelatedPhotos(response.data.related_collections.results);
       }
     } catch (error) {
-      console.log('error',error);
+      console.error('error',error);
     }
   };
   fetchData();
 }, [slug]);
 
-  console.log('photo',photo)
-  console.log('relatedPhotos',relatedPhotos)
   return (
     <div className={Style.container}>
       <div className={Style.blog_pg}>

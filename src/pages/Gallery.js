@@ -9,14 +9,15 @@ const Gallery = () => {
   const [photos,setPhotos] = useState([])
 
   useEffect(()=>{
-    axios.get(`https://api.unsplash.com/photos?client_id=_---IBvnPAC78lHyq6Vc9-MPXprqKSPVulYjWCdqJ94`)
-    .then(res=>{
-      console.log(res.data);
-      setPhotos(res.data)
-    })
-    .catch(error => {
-      console.log(error)
-    });
+    const gallery_data = async () => {
+      try{
+        const response = await axios.get(`https://api.unsplash.com/photos?client_id=_---IBvnPAC78lHyq6Vc9-MPXprqKSPVulYjWCdqJ94`);
+        setPhotos(response.data)
+      }catch(error){
+        console.error(error)
+      }
+    };
+    gallery_data();
   },[]);
   
 
@@ -26,10 +27,10 @@ const Gallery = () => {
       <div className={HomeStyle.blogs}>
         {photos.map((photo) => {
           return (
-            <div  key={photo.id} className={HomeStyle.blog_item}>
+            <div  key={photo?.id} className={HomeStyle.blog_item}>
               <Link to={`/gallery/${photo.slug}`}>
-                <img src={photo.urls.thumb} alt={photo.alt_description} />
-                <p>{photo.description}</p>
+                <img src={photo.urls?.thumb} alt={photo?.alt_description} />
+                <p>{photo?.description?.length>100 ? photo?.description.slice(0,100)+'...': photo?.description}</p>
               </Link>
             </div>
           );
