@@ -70,6 +70,13 @@
    width: 60rem;
  }
 
+ .about_pg,
+ .contact_pg {
+   background-image: url('../images/wallpaper7.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+ }
 
  /* recent blog section */
  .blog_pg .latest_blog_section {

@@ -20,7 +20,7 @@ const Contact = () => {
         console.log('Form submitted:', formData);
       };
     return (
-        <div className={Style.container}>
+        <div className={`${Style.container} ${Style.contact_pg}`}>
              <div className={ContactStyle.contact_page}>
                 <h2>Contact Us</h2>
                 <form onSubmit={handleSubmit}>

@@ -1,3 +1,7 @@
+body {
+  /* background-image: url('../images/wallpaper7.jpg'); */
+}
+
 .home_abt_section {
   display: flex;
   gap: 1rem;

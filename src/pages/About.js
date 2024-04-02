@@ -2,7 +2,7 @@ import Style from "../assets/styles/styles.module.css";
 
 const About = () => {
   return (
-    <div className={Style.container}>
+    <div className={`${Style.container} ${Style.about_pg}`}>
       <h2>Welcome to BeyondCircuits</h2>
       <p>
         At BeyondCircuits, we delve into the boundless realm of technology to
