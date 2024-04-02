@@ -1,5 +1,6 @@
 .home_abt_section {
   display: flex;
+  gap: 1rem;
   flex-direction: row;
   justify-content: space-between;
 }
